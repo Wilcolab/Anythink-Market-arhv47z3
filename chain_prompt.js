@@ -1,18 +1,20 @@
-function toKebabCase(input) {
-  if (input === null || input === undefined) {
+function toKebabCase(str) {
+  if (str === null || str === undefined) {
     throw new Error("Input cannot be null or undefined");
   }
 
-  if (typeof input !== 'string') {
+  if (typeof str !== "string") {
     throw new Error("Input must be a string");
   }
 
-  if (input.trim() === '') {
+  if (str.trim() === "") {
     throw new Error("Input cannot be empty");
   }
 
-  return input
+  return str
     .toLowerCase()
     .trim()
-    .replace(/[_\s]+/g, '-');
+    .replace(/[\s_]+/g, "-");
 }
+
+module.exports = toKebabCase;
